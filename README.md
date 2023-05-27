@@ -1,5 +1,8 @@
-docker build --tag="<image_name>" .
+`docker build --tag="<image_name>"`
+`docker run --interactive --env-file .env <image_name>`
 
-docker run --env-file .env <image_name>
-
-docker run --tty --interactive <image_name>
+# Add this to azure-piplines.yml
+pool:
+  name: Default
+  demands:
+    - agent.name -equals AGENTDOCKER
